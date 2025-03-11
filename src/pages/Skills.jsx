@@ -1,22 +1,22 @@
 import React from 'react'
-// import html from "../assets/Skills-Img/html.png"
-// import css from "../assets/Skills-Img/css.png"
-// import js from "../assets/Skills-Img/javascript.png"
-// import bootstrap from "../assets/Skills-Img/boot.png"
+import html from "../assets/Skills-Img/html.png"
+import css from "../assets/Skills-Img/css.png"
+import js from "../assets/Skills-Img/javascript.png"
+import bootstrap from "../assets/Skills-Img/boot.png"
 
-// import tailwind from "../assets/Skills-Img/tailwind.png";
-// import photoshop from "../assets/Skills-Img/photoshop.png"
-// import vue from "../assets/Skills-Img/vue.png"
-// import figma from "../assets/Skills-Img/figma.png"
-// import git from "../assets/Skills-Img/git.png"
-// import github from "../assets/Skills-Img/github.png"
-// import reactIcon from "../assets/Skills-Img/react.png"
-// import redux from "../assets/Skills-Img/redux.png"
-// import TanStack from "../assets/Skills-Img/tanStack.png"
-// import Typescript from "../assets/Skills-Img/typescript.png"
-// import Nodejs from "../assets/Skills-Img/nodejs.png"
-// import materialUI from "../assets/Skills-Img/material ui.png"
-// import mongo from "../assets/Skills-Img/mogdo.png"
+import tailwind from "../assets/Skills-Img/tailwind.png";
+import photoshop from "../assets/Skills-Img/photoshop.png"
+import vue from "../assets/Skills-Img/vue.png"
+import figma from "../assets/Skills-Img/figma.png"
+import git from "../assets/Skills-Img/git.png"
+import github from "../assets/Skills-Img/github.png"
+import reactIcon from "../assets/Skills-Img/react.png"
+import redux from "../assets/Skills-Img/redux.png"
+import TanStack from "../assets/Skills-Img/tanStack.png"
+import Typescript from "../assets/Skills-Img/typescript.png"
+import Nodejs from "../assets/Skills-Img/nodejs.png"
+import materialUI from "../assets/Skills-Img/material ui.png"
+import mongo from "../assets/Skills-Img/mogdo.png"
 
 
 import Skills_Card from '../components/Skills_Card/Skills-Card'
@@ -28,7 +28,6 @@ import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import Heading from '../components/heading/Heading'
 
-// import { motion } from 'framer-motion';
 
 
 const Skills = () => {
@@ -45,20 +44,20 @@ const Skills = () => {
             </div>
             <div className="my-skills  md:p-3 p-0">
 
-                {/* <Swiper
+                <Swiper
                     modules={[Autoplay]}
                     spaceBetween={30}
                     autoplay={{ delay: 2000, disableOnInteraction: false }}
                     speed={1500}
                     loop={true}
                     breakpoints={{
-                        0: { slidesPerView: 3 }, // على الشاشات الصغيرة (هواتف)
-                        1024: { slidesPerView: 4 }, // على الشاشات الكبيرة (لابتوب/ديسكتوب)
+                        0: { slidesPerView: 3 }, 
+                        1024: { slidesPerView: 4 }, 
                     }}
                     className='mb-20'
                 >
                     <SwiperSlide >
-                        <Skills_Card img={html}/>
+                        <Skills_Card img={html} />
                     </SwiperSlide>
                     <SwiperSlide>
                         <Skills_Card img={css} />
@@ -99,8 +98,8 @@ const Skills = () => {
                     speed={1500}
                     loop={true}
                     breakpoints={{
-                        0: { slidesPerView: 3 }, // على الشاشات الصغيرة (هواتف)
-                        1024: { slidesPerView: 4 }, // على الشاشات الكبيرة (لابتوب/ديسكتوب)
+                        0: { slidesPerView: 3 }, 
+                        1024: { slidesPerView: 4 }, 
                     }}
 
                 >
@@ -122,7 +121,7 @@ const Skills = () => {
                     <SwiperSlide>
                         <Skills_Card img={materialUI} />
                     </SwiperSlide>
-                </Swiper> */}
+                </Swiper>
             </div>
         </div>
     )
