@@ -29,15 +29,16 @@ const Side_Left = ({ toggleSidebar, sidebarOpen }) => {
         <div
             className={`Side_Left text-center fixed inset-y-0 top-0 left-0 z-30 md:w-95 md:text-base sm:w-75 w-70 text-[12px] lg:rounded-2xl overflow-y-hidden
                         transition duration-400 transform lg:translate-x-0 lg:static lg:inset-0 ${sidebarOpen
-                        ? "translate-x-0 ease-out"
-                        : "-translate-x-full ease-in"
+                    ? "translate-x-0 ease-out"
+                    : "-translate-x-full ease-in"
                 }`}
         >
             <video autoPlay loop muted playsInline className="video-bg" onError={(e) => console.error("Video failed to load", e)}>
-                <source src="/vedio_bg.MP4" type="video/mp4" />
-
+                {/* <source src="/vedio_bg.MP4" type="video/mp4" /> */}
+                <source src="https://videos.pexels.com/video-files/2611250/2611250-uhd_2560_1440_30fps.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
+
 
             {sidebarOpen && (
                 <div
@@ -59,7 +60,7 @@ const Side_Left = ({ toggleSidebar, sidebarOpen }) => {
                             />
                         </div>
                         <div className="headerName">
-                            <h1 className="text-2xl font-bold mt-8">Mohamed Elshahat</h1>
+                            <h1 className="text-2xl font-bold mt-5">Mohamed Elshahat</h1>
 
                             <Button />
                             <div
