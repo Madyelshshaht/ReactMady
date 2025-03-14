@@ -12,7 +12,7 @@ const Service_Cards = ({ title, desc, icon }) => {
                 variants={fadeIn("up", 0.2)}
                 initial="hidden"
                 whileInView={"show"}
-                viewport={{ once: false, amount: 0.9 }}
+                viewport={{ once: false, amount: 0.5 }}
                 className="service flex md:flex-row flex-col items-center md:gap-10 md:p-10 p-8 rounded-2xl text-balance shadow-lg hover:scale-102 hover:italic shadow-gray-500">
                 <div className="icon mb-10">
                     {icon}
