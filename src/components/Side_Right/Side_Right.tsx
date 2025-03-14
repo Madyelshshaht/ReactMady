@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import "./Side_Right.css"
 import { useState } from "react";
 
@@ -10,10 +10,18 @@ import {
   SunIcon,
 } from "lucide-react";
 
+
 import { Link } from 'react-router-dom';
 import AppRouter from '../../routers/AppRouter';
+import { LightModeOutlined } from '@mui/icons-material';
 const Side_Right = ({ toggleSidebar }) => {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState(localStorage.getItem("theme"))
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme as string);
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  }, [theme]);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const HandleTheme = () => {
@@ -111,6 +119,7 @@ const Side_Right = ({ toggleSidebar }) => {
           <AppRouter />
         </div>
       </main>
+
     </div>
   );
 };

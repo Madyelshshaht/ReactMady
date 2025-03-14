@@ -29,20 +29,30 @@ import { Autoplay } from "swiper/modules";
 import Heading from '../components/heading/Heading'
 
 
+import { motion } from "framer-motion";
+import { fadeIn } from "../animation";
+
+
 
 const Skills = () => {
     return (
-        <div className='skills '
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+        <motion.div className='skills '
+        // initial={{ width: 0 }}
+        // animate={{ width: "100%" }}
+        // exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
         >
             <Heading title="Skills" />
             <div className="text-center my-6">
                 <h3 className='text-2xl font-bold'>Essential tools I Use</h3>
                 <p className='mt-2'>Discover the powerful tools and technologies i use to create exceptional, <br />  high-performance websites & applications.</p>
             </div>
-            <div className="my-skills  md:p-3 p-0">
+            <motion.div
+                variants={fadeIn("up", 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.5 }}
+
+                className="my-skills  md:p-3 p-0">
 
                 <Swiper
                     modules={[Autoplay]}
@@ -51,8 +61,8 @@ const Skills = () => {
                     speed={1500}
                     loop={true}
                     breakpoints={{
-                        0: { slidesPerView: 3 }, 
-                        1024: { slidesPerView: 4 }, 
+                        0: { slidesPerView: 3 },
+                        1024: { slidesPerView: 4 },
                     }}
                     className='mb-20'
                 >
@@ -98,8 +108,8 @@ const Skills = () => {
                     speed={1500}
                     loop={true}
                     breakpoints={{
-                        0: { slidesPerView: 3 }, 
-                        1024: { slidesPerView: 4 }, 
+                        0: { slidesPerView: 3 },
+                        1024: { slidesPerView: 4 },
                     }}
 
                 >
@@ -122,8 +132,8 @@ const Skills = () => {
                         <Skills_Card img={materialUI} />
                     </SwiperSlide>
                 </Swiper>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     )
 }
 

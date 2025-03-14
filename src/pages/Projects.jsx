@@ -1,4 +1,7 @@
 import React, { useMemo } from "react";
+
+import { motion } from 'framer-motion';
+
 import Heading from "../components/heading/Heading";
 
 // Cars
@@ -57,7 +60,8 @@ import win from "../assets/Projects-img/XO/win.png";
 
 import Project from "../components/Project/Project";
 
-// import {motion} from "framer-motion"
+
+
 
 const skillsArray = ["HTML", "CSS", "JavaScript", "Bootstrap", "Tailwind", "Node.js", "React", "Redux", "TypeScript", "Material UI", "Lucide"];
 
@@ -65,12 +69,16 @@ const Projects = () => {
 
     return (
         <>
-            <div className="projects py-5 lg:px-10 "
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+            <Heading title="Projects" />
+            <motion.div
+
+
+                className="projects py-5 lg:px-10 "
+            // initial={{ width: 0 }}
+            // animate={{ width: "100%" }}
+            // exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
             >
-                <Heading title="Projects" />
+
 
 
                 <Project
@@ -142,7 +150,7 @@ const Projects = () => {
                     github="https://github.com/Madyelshshaht/Cryptoverse"
                 />
 
-            </div>
+            </motion.div>
         </>
     );
 };

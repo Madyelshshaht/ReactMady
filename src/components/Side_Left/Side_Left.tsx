@@ -61,7 +61,7 @@ const Side_Left = ({ toggleSidebar, sidebarOpen }) => {
                         </div>
                         <div className="headerName">
                             <h1 className="text-2xl font-bold mt-5">Mohamed Elshahat</h1>
-
+                            
                             <Button />
                             <div
                                 className="headborder border-b-2 pb-6 md:w-75 w-60 m-auto"

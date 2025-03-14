@@ -3,7 +3,8 @@ import Heading from "../components/heading/Heading";
 import web from "../assets/loti/web.json";
 import Lottie from "lottie-react";
 import Animation_Word from "../components/Home_Word/Animation_Word";
-// import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { fadeIn } from "../animation";
 
 
 const MemoizedLottie = React.memo(({ animationData }) => (
@@ -17,13 +18,13 @@ const Home = () => {
 
     return (
         <>
-
-            <div className="Home  overflow-hidden"
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+            <Heading title="Home" />
+            <motion.div className="Home  overflow-hidden"
+                variants={fadeIn("up", 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.1 }}
             >
-                <Heading title="Home" />
                 <div className="hero flex flex-col lg:flex-row items-center gap-3 md:px-4 pb-10">
                     {/* Content Section */}
                     <div className="content w-full lg:w-1/5 text-center lg:text-left ">
@@ -73,7 +74,7 @@ const Home = () => {
                     </div>
                 </div>
 
-            </div>
+            </motion.div>
         </>
     );
 };

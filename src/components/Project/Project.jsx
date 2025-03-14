@@ -1,8 +1,16 @@
 import React, { useCallback, useMemo } from 'react'
 import "./Project.css"
+
+import { fadeIn } from "../../animation";
+
+import { motion } from "framer-motion";
+
+
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import { GitHub } from "@mui/icons-material";
+
+
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -29,16 +37,23 @@ const Project = ({ imgs = [], title, desc, skills, mainIndexes, extraIndexes = [
     ), []);
 
     return (
-        <div className={`project flex md:flex-row ${side} items-center flex-col gap-2 shadow-md shadow-gray-500 mb-10`}>
+        <motion.div
+            variants={fadeIn("up", 0.3)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            className={`project flex md:flex-row ${side} items-center flex-col gap-2 shadow-md shadow-gray-500 mb-10`}>
 
-            <div className="img md:w-1/2 w-full  p-2">
+            <div
+
+                className="img md:w-1/2 w-full  p-2">
                 <Swiper
                     slidesPerView={1}
                     // autoHeight={true}
                     spaceBetween={30}
                     loop={true}
                     autoplay={{
-                        delay: 3000,
+                        delay: 8000,
                         disableOnInteraction: false,
                     }}
                     pagination={{
@@ -54,7 +69,13 @@ const Project = ({ imgs = [], title, desc, skills, mainIndexes, extraIndexes = [
                     ))}
                 </Swiper>
             </div>
-            <div className="info p-2 lg:p-4 md:w-1/2 w-full flex flex-col gap-2">
+
+            <motion.div
+                variants={fadeIn("up", 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.7 }}
+                className="info p-2 lg:p-4 md:w-1/2 w-full flex flex-col gap-2">
                 <h3 className="title mb-2">{title}</h3>
                 <div className="desc mb-2 text-xs md:text-md lg:text-lg ">{desc}</div>
                 <div className="skills-used flex items-center gap-x-5 gap-y-3 flex-wrap text-black">
@@ -64,8 +85,8 @@ const Project = ({ imgs = [], title, desc, skills, mainIndexes, extraIndexes = [
                     <Link to={link} target="_blank"><ExternalLink size={20} /></Link>
                     <Link to={github} target="_blank"><GitHub style={{ fontSize: "22px" }} /></Link>
                 </div>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };
 
