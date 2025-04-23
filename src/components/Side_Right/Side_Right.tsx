@@ -13,7 +13,8 @@ import {
 
 import { Link } from 'react-router-dom';
 import AppRouter from '../../routers/AppRouter';
-import { LightModeOutlined } from '@mui/icons-material';
+import { dark } from '@mui/material/styles/createPalette';
+
 const Side_Right = ({ toggleSidebar }) => {
   const [theme, setTheme] = useState(localStorage.getItem("theme"))
 
@@ -29,10 +30,10 @@ const Side_Right = ({ toggleSidebar }) => {
   }
 
   return (
-    <div className="flex flex-col flex-1 overflow-hidden lg:rounded-2xl border-white">
-      <header className="flex items-center justify-between  ps-5 py-4 bg-white border-b-4 border-green-600">
+    <div className="flex flex-col flex-1 overflow-hidden lg:rounded-xl border-white">
+      <header className={`flex items-center justify-between  ps-5 py-5 ${theme === 'light' ? 'bg-white , text-black' : 'bg-[#1f1e1f]  , text-white'} `}>
 
-        <div className="left-Header">
+        <div className="left-Header ">
           <div className="flex items-center ">
             <button onClick={toggleSidebar} className="text-gray-500 focus:outline-none lg:hidden cursor-pointer">
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +47,7 @@ const Side_Right = ({ toggleSidebar }) => {
 
         <div className="Right-Header relative h-full py-3 ">
 
-          <div className="up absolute flex lg:justify-between justify-end items-center gap-10 md:gap-10 pt-2 right-0 lg:bg-green-700 lg:w-150   lg:-mt-8 -mt-6 lg:p-4 px-4">
+          <div className="up absolute flex lg:justify-between justify-end items-center gap-10 md:gap-10 pt-3 right-0 rounded-s-2xl rounded-t-none lg:bg-[#2e2d2fd9] lg:w-150 lg:-mt-8 -mt-6 lg:p-4 px-4">
 
             {/* Nav */}
             <nav className=" text-white">
@@ -73,7 +74,7 @@ const Side_Right = ({ toggleSidebar }) => {
 
               {/* Mobile Menu (Opens from Right) */}
               <div
-                className={`fixed top-0 right-0 h-full w-64 bg-gray-800 z-29 text-white p-6 transform ${isOpen ? "md:translate-x-15 sm:translate-x-25 translate-x-35" : "translate-x-70"
+                className={`fixed top-0 right-0 h-full w-64 bg-[#3b393c] z-29 text-white p-6 transform ${isOpen ? "md:translate-x-15 sm:translate-x-25 translate-x-35" : "translate-x-70"
                   } transition-transform duration-400 ease-in-out lg:hidden`}
               >
                 <button
@@ -102,9 +103,9 @@ const Side_Right = ({ toggleSidebar }) => {
                 aria-label="Toggle color mode"
               >
                 {theme === 'dark' ? (
-                  <SunIcon className="w-5 h-5" aria-hidden="true" color='black' />
+                  <SunIcon className="w-5 h-5" aria-hidden="true" color='white' />
                 ) : (
-                  <MoonIcon className="w-5 h-5" aria-hidden="true" color='black' />
+                  <MoonIcon className="w-5 h-5" aria-hidden="true" color='white' />
                 )}
               </button>
             </div>
@@ -114,8 +115,8 @@ const Side_Right = ({ toggleSidebar }) => {
 
       </header >
 
-      <main className={`${theme === 'light' ? 'bg-white , text-black' : 'bg-black , text-white'} p-2 flex-1 overflow-x-hide overflow-y-auto `}>
-        <div className="container px-6 py-8 mx-auto ">
+      <main className={`${theme === 'light' ? 'bg-white , text-black' : 'bg-[#1f1e1f] , text-white'} p-2 flex-1 overflow-x-hide overflow-y-auto `}>
+        <div className="container px-6 py-2 mx-auto ">
           <AppRouter />
         </div>
       </main>

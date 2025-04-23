@@ -2,14 +2,15 @@
 .name1,
 .name2,
 .name3 {
-    color: #474747;
+    /* color: white; */
     font-weight: bold !important;
-    font-family: monospace;
+    /* font-family: monospace; */
     letter-spacing: 5px !important;
     text-transform: uppercase;
 }
 
 .name {
+    
     background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(132, 100%, 31%) 10%, hsl(0, 0%, 30%) 20%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -25,9 +25,9 @@ const Home = () => {
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.1 }}
             >
-                <div className="hero flex flex-col lg:flex-row items-center gap-3 md:px-4 pb-10">
+                <div className="hero flex flex-col lg:flex-row items-center gap-3 md:px-4 pb-10 ">
                     {/* Content Section */}
-                    <div className="content w-full lg:w-1/5 text-center lg:text-left ">
+                    <div className="content w-full lg:w-1/5 text-center lg:text-left">
                         <div className="info md:p-5 p-2 flex flex-col gap-3 ">
                             <Animation_Word />
                         </div>
@@ -42,7 +42,7 @@ const Home = () => {
                 {/* Open and Close Paragraph */}
                 <div className="w-full mx-auto ">
                     <button
-                        className="w-full rounded bg-green-600 px-6 py-2 text-sm font-medium uppercase text-white shadow-md transition duration-150 ease-in-out hover:bg-gray-800 focus:outline-none focus:ring focus:ring-gray-400 cursor-pointer"
+                        className="w-full rounded bg-green-600 hover:bg-gray-800 px-6 py-2 text-sm font-medium uppercase text-white shadow-md transition duration-150 ease-in-out  focus:outline-none focus:ring focus:ring-gray-400 cursor-pointer"
                         onClick={toggleSummary}
                         aria-expanded={isOpen}
                         aria-controls="collapseSummary"

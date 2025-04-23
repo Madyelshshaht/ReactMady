@@ -33,8 +33,20 @@ const Side_Left = ({ toggleSidebar, sidebarOpen }) => {
                     : "-translate-x-full ease-in"
                 }`}
         >
-            <video autoPlay loop muted playsInline className="video-bg" onError={(e) => console.error("Video failed to load", e)}>
-                {/* <source src="/vedio_bg.MP4" type="video/mp4" /> */}
+            {/* <video autoPlay loop muted playsInline className="video-bg" onError={(e) => console.error("Video failed to load", e)}>
+                <source src="https://videos.pexels.com/video-files/2611250/2611250-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video> */}
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="video-bg"
+                onError={(e) => console.error("Video failed to load", e)}
+                disablePictureInPicture
+                controlsList="nodownload nofullscreen noremoteplayback"
+            >
                 <source src="https://videos.pexels.com/video-files/2611250/2611250-uhd_2560_1440_30fps.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
@@ -61,7 +73,7 @@ const Side_Left = ({ toggleSidebar, sidebarOpen }) => {
                         </div>
                         <div className="headerName">
                             <h1 className="text-2xl font-bold mt-5">Mohamed Elshahat</h1>
-                            
+
                             <Button />
                             <div
                                 className="headborder border-b-2 pb-6 md:w-75 w-60 m-auto"
